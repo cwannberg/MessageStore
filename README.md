@@ -44,3 +44,6 @@ No tests have been added yet.
 # Acknowledgments
 The class MakeSpringPrettyPrintJSON.java is COPIED FROM: https://stackoverflow.com/questions/36119852/spring-boot-actuator-pretty-print-json
 I've used it to make the application return pretty-printed JSON (easier to debug)
+
+I read about tests and used their tutorial code for testing this project.
+https://semaphoreci.com/community/tutorials/testing-rest-endpoints-using-rest-assured
