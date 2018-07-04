@@ -1,21 +1,28 @@
 package com.example.demo.controllers;
 
 import com.example.demo.Model.TextMessage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @RestController
 public class Controller {
+
     private ArrayList<TextMessage> textMessages = new ArrayList<>();
     //AtomicInteger = An int value that may be updated atomically.
     private AtomicInteger nextId = new AtomicInteger();
+    @Autowired
+    TextMessage textMessage;
 
     @PostMapping("/textmessages")
-    @ResponseStatus(HttpStatus.CREATED)
     //Specifies that a new TextMessage is created. Instead of HttpStatus 200 we get 201.
+    @ResponseStatus(HttpStatus.CREATED)
     public TextMessage writeNewTextMessage(@RequestBody TextMessage textMessage) {
+
+        this.textMessage = textMessage;
         //Set TextMessage to have next unique ID:
         textMessage.setId(nextId.incrementAndGet());
 
@@ -25,6 +32,7 @@ public class Controller {
 
     @GetMapping("/textmessages")
     public ArrayList<TextMessage> getAllTextMessages() {
+
         return textMessages;
     }
 
