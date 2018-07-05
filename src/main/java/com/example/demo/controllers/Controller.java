@@ -13,7 +13,6 @@ public class Controller {
     @Autowired
     MessageStoreInterface messageStoreInterface;
 
-
     @PostMapping("/textmessages")
     //Specifies that a new TextMessage is created. Instead of HttpStatus 200 we get 201.
     @ResponseStatus(HttpStatus.CREATED)
