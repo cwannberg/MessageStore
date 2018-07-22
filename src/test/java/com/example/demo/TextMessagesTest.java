@@ -12,7 +12,4 @@ public class TextMessagesTest extends TestClass {
 	public void basicPingTest() {
 		given().when().get("/textmessages").then().statusCode(200);
 	}
-
-
-
 }
